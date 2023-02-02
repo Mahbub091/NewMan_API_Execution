@@ -4,7 +4,7 @@
   "description": "Newman Test Execution",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/Mahbub091/NewMan_API_Execution/issues"
   },
-  "homepage": "https://github.com/Mahbub091/NewMan_API_Execution#readme"
+  "homepage": "https://github.com/Mahbub091/NewMan_API_Execution#readme",
+  "dependencies": {
+    "async": "^3.2.4",
+    "newman": "^5.3.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "keywords": []
 }
