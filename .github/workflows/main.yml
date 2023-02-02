@@ -18,11 +18,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.3.0
+    
       
     # INstall Node on the runner
     - name: Install Node
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3.6.0
       with: 
         node-version: '16.x'
     
@@ -42,7 +43,7 @@ jobs:
        newman run collections/postman_collection.json --reporters cli,htmlextra --reporter-htmlextra-export TestResults/HtmlReport.html
     # Upload the contents of Test Results directory to workspace
     - name: Output the run details
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3.1.2
       with: 
        name: Test Results
        path: TestResults

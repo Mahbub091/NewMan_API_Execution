@@ -4,7 +4,9 @@
   "description": "Newman Test Execution",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "cli:test": "node report.js",
+    "report:delete": "del-cli --force .\\Reports\\*.html",
+    "test:newman": "npm run report:delete && npm run cli:test"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,16 @@
   "bugs": {
     "url": "https://github.com/Mahbub091/NewMan_API_Execution/issues"
   },
-  "homepage": "https://github.com/Mahbub091/NewMan_API_Execution#readme"
+  "homepage": "https://github.com/Mahbub091/NewMan_API_Execution#readme",
+  "dependencies": {
+    "async": "^3.2.4",
+    "newman": "^5.3.2",
+    "path": "^0.12.7",
+    "newman-reporter-htmlextra": "^1.22.11"
+  },
+  "devDependencies": {
+    "del-cli": "^5.0.0",
+    "rimraf": "^4.1.2"
+  },
+  "keywords": []
 }
