@@ -506,61 +506,6 @@
 					"response": []
 				}
 			]
-		},
-		{
-			"name": "Data Driven",
-			"item": [
-				{
-					"name": "Register User data from csv",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 201\", function () {\r",
-									"    pm.response.to.have.status(201);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Response time is less than 1000ms\", function () {\r",
-									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
-									"});\r",
-									"\r",
-									"tests[\"varify Email\"] = responseBody.has(data[\"email\"])\r",
-									"\r",
-									"//{{SERVICE_END_POINT}}/{{RESOURCE_END_POINT}}\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"{{password}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{SERVICE_END_POINT}}/api/register",
-							"host": [
-								"{{SERVICE_END_POINT}}"
-							],
-							"path": [
-								"api",
-								"register"
-							]
-						}
-					},
-					"response": []
-				}
-			]
 		}
 	],
 	"event": [
