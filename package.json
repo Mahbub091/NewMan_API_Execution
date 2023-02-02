@@ -1,0 +1,19 @@
+{
+  "name": "newman_api_execution",
+  "version": "1.0.0",
+  "description": "Newman Test Execution",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mahbub091/NewMan_API_Execution.git"
+  },
+  "author": "mahbub",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mahbub091/NewMan_API_Execution/issues"
+  },
+  "homepage": "https://github.com/Mahbub091/NewMan_API_Execution#readme"
+}
