@@ -1,0 +1,853 @@
+{
+	"info": {
+		"_postman_id": "21c86ed7-0986-4487-871d-0c5b88b5faca",
+		"name": "AutomationExercise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16106952"
+	},
+	"item": [
+		{
+			"name": "Get All Product List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://automationexercise.com/api/productsList",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"productsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post To All Products List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Product List\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseCode).to.eql(405);\r",
+							"    pm.expect(jsonData.message).to.eql(\"This request method is not supported.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://automationexercise.com/api/productsList",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"productsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Brands List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://automationexercise.com/api/brandsList",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"brandsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put To All Brands List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Brands List\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseCode).to.eql(405);\r",
+							"    pm.expect(jsonData.message).to.eql(\"This request method is not supported.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://automationexercise.com/api/brandsList",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"brandsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post To Search Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Post to search product\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "search_product ",
+							"value": "jean",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://automationexercise.com/api/searchProduct",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"searchProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST To Search Product without search_product parameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Product List\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseCode).to.eql(400);\r",
+							"    pm.expect(jsonData.message).to.eql(\"Bad request, search_product parameter is missing in POST request.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://automationexercise.com/api/searchProduct",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"searchProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST To Create/Register User Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Create User Account\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseCode).to.eql(201);\r",
+							"    pm.expect(jsonData.message).to.eql(\"User created!\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "robert",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "roughdon@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345667",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Mr.",
+							"type": "text"
+						},
+						{
+							"key": "birth_date",
+							"value": "27/10/1991",
+							"type": "text"
+						},
+						{
+							"key": "birth_month",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "birth_year",
+							"value": "1991",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "Robert",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "Dash",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "DevsDen",
+							"type": "text"
+						},
+						{
+							"key": "address1",
+							"value": "Unknown",
+							"type": "text"
+						},
+						{
+							"key": "address2",
+							"value": "Unknown",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "India",
+							"type": "text"
+						},
+						{
+							"key": "zipcode",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "Adapazarı",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "Sakarya",
+							"type": "text"
+						},
+						{
+							"key": "mobile_number",
+							"value": "555 555 55 55",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://automationexercise.com/api/createAccount",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"createAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST To Verify Login with valid details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Login with valid details\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+							"    pm.expect(jsonData.message).to.eql(\"User exists!\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "roughdon@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345667",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://automationexercise.com/api/verifyLogin",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"verifyLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST To Verify Login without email parameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Verify Login without email parameter\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseCode).to.eql(400);\r",
+							"    pm.expect(jsonData.message).to.eql(\"Bad request, email or password parameter is missing in POST request.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "password",
+							"value": "12345667",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://automationexercise.com/api/verifyLogin",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"verifyLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE To Verify Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Delete to verify login\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseCode).to.eql(405);\r",
+							"    pm.expect(jsonData.message).to.eql(\"This request method is not supported.\");\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://automationexercise.com/api/verifyLogin",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"verifyLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST To Verify Login with invalid details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Verify Login with invalid details\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseCode).to.eql(404);\r",
+							"    pm.expect(jsonData.message).to.eql(\"User not found!\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "roughdon@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "4321",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://automationexercise.com/api/verifyLogin",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"verifyLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT METHOD To Update User Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Update User Account\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+							"    pm.expect(jsonData.message).to.eql(\"User updated!\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Robert",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "roughdon@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345667",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Mr",
+							"type": "text"
+						},
+						{
+							"key": "birth_date",
+							"value": "16/09/1996",
+							"type": "text"
+						},
+						{
+							"key": "birth_month",
+							"value": "9",
+							"type": "text"
+						},
+						{
+							"key": "birth_year",
+							"value": "1996",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "robert",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "Küçükarslan",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "Donatım",
+							"type": "text"
+						},
+						{
+							"key": "address1",
+							"value": "Beşköprü",
+							"type": "text"
+						},
+						{
+							"key": "address2",
+							"value": "Maltepe",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "Türkiye",
+							"type": "text"
+						},
+						{
+							"key": "zipcode",
+							"value": "789",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "Adapazarı",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "Sakarya",
+							"type": "text"
+						},
+						{
+							"key": "mobile_number",
+							"value": "777 777 77 77",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://automationexercise.com/api/updateAccount",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"updateAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET user account detail by email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Validating Test Body\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+							"    pm.expect(jsonData.user.name).to.eql(\"Robert\");\r",
+							"    pm.expect(jsonData.user.email).to.eql(\"roughdon@mail.com\");\r",
+							"    pm.expect(jsonData.user.title).to.eql(\"Mr\");\r",
+							"    pm.expect(jsonData.user.first_name).to.eql(\"robert\");\r",
+							"    pm.expect(jsonData.user.city).to.eql(\"Sakarya\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "sefa@gmail.com",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://automationexercise.com/api/getUserDetailByEmail?email=roughdon@mail.com",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"getUserDetailByEmail"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "roughdon@mail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE METHOD To Delete User Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
+							"    pm.expect(jsonData.message).to.eql(\"Account deleted!\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "roughdon@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345667",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://automationexercise.com/api/deleteAccount",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"deleteAccount"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
