@@ -1,4 +1,4 @@
-name: Sample Postman Collections
+name: Executing Newman CLI Tests
 
 # Controls when the workflow will run
 on:
