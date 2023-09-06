@@ -3,6 +3,7 @@ const newman = require("newman");
 newman.run(
   {
     collection: require("./collections/AutomationExerciseNew.postman_collection.json"),
+    environment: require("./collections/Test.postman_environment.json"),
 
     iterationCount: 1,
     reporters: "htmlextra",

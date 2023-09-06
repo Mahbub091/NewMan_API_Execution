@@ -4,10 +4,10 @@ name: Newman CLI Tests  Execution
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: 
-    - master
+    branches:
+      - master
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -17,33 +17,31 @@ jobs:
   test_api_collection:
     runs-on: ubuntu-latest
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v3.3.0
-    
-      
-    # INstall Node on the runner
-    - name: Install Node
-      uses: actions/setup-node@v3.6.0
-      with: 
-        node-version: '16.x'
-    
-    # Install the newman command line utility and also install the html extra reporter
-    - name: Install newman
-      run: |
-       npm install -g newman
-       npm install -g newman-reporter-htmlextra
-    # Make directory to upload the test results
-    - name: Make directory for results
-      run: mkdir -p TestResults
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3.3.0
 
+      # INstall Node on the runner
+      - name: Install Node
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: "16.x"
 
-    # Run the POSTMAN collection
-    - name: Run Sample Postman Collections
-      run: |
-       newman run collections/postman_collection.json --reporters cli,htmlextra --reporter-htmlextra-export TestResults/HtmlReport.html
-    # Upload the contents of Test Results directory to workspace
-    - name: Output the run details
-      uses: actions/upload-artifact@v3.1.2
-      with: 
-       name: Test Results
-       path: TestResults
+      # Install the newman command line utility and also install the html extra reporter
+      - name: Install newman
+        run: |
+          npm install -g newman
+          npm install -g newman-reporter-htmlextra
+      # Make directory to upload the test results
+      - name: Make directory for results
+        run: mkdir -p TestResults
+
+      # Run the POSTMAN collection
+      - name: Run Sample Postman Collections
+        run: |
+          newman run collections/postman_collection.json -e collections/Test.postman_environment.json --reporters cli,htmlextra --reporter-htmlextra-export TestResults/HtmlReport.html
+      # Upload the contents of Test Results directory to workspace
+      - name: Output the run details
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: Test Results
+          path: TestResults
